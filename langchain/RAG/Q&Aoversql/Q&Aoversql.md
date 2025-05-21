@@ -82,3 +82,19 @@
 - InMemorySaver: this checkpoint saver stores checkpoints in memory using a defaultdict.
 
 ## Agents
+
+- By themselves, language models can't take actions - they just output text. Agents are systems that take a high-level task and use an LLM as a reasoning engine to decide what actions to take and execute those actions.
+
+- Using agents allows you to offload additional discretion over the query generation and execution process. Although their behavior is less predictable than the above "chain", they feature some advantages:
+
+- - They can query the database as many times as needed to answer the user question.
+
+- - They can recover from errors by running a generated query, catching the traceback and regenerating it correctly.
+
+- - They can answer questions based on the databases' schema as well as on the databases' content (like describing a specific table).
+
+## Dealing with high-cardinality columns
+
+- In order to filter columns that contain proper nouns such as addresses, song names or artists, we first need to double-check the spelling in order to filter the data correctly.
+
+- We can achieve this by creating a vector store with all the distinct proper nouns that exist in the database. We can then have the agent query that vector store each time the user includes a proper noun in their question, to find the correct spelling for that word. In this way, the agent can make sure it understands which entity the user is referring to before building the target query.
