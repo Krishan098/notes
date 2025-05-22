@@ -8,3 +8,7 @@
 
 # TBC:
 https://langchain-ai.github.io/langgraph/concepts/low_level/#why-use-messages 
+
+- how to use graph api:
+
+ https://langchain-ai.github.io/langgraph/how-tos/graph-api/
