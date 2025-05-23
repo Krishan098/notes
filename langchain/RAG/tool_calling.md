@@ -26,3 +26,4 @@
 
 ## Reference
 [tool-calling](https://python.langchain.com/docs/concepts/tool_calling/)
+[function-calling](https://platform.openai.com/docs/guides/function-calling/example-use-cases?api-mode=responses)
