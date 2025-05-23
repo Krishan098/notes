@@ -30,3 +30,8 @@
 - [SBERT](https://www.sbert.net/examples/sentence_transformer/training/sts/README.html)
 - [MTEB](https://huggingface.co/blog/mteb)
 - [power of vector search](https://cameronrwolfe.substack.com/p/the-basics-of-ai-powered-vector-search)
+- [Samwilson](https://simonwillison.net/2023/Oct/23/embeddings/)
+
+- [Google](https://developers.google.com/machine-learning/clustering/dnn-clustering/supervised-similarity)
+
+- [Pinecone](https://www.pinecone.io/learn/vector-similarity/)
