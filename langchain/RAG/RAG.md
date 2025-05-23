@@ -118,3 +118,19 @@
 - able to execute multiple retrieval steps in service of a query, or iterate on a single search.
 
 - The key difference from our earlier implementation is that instead of a final generation step that ends the run, here the tool invocation loops back to the original LLM call. The model can then either answer the question using the retrieved context, or generate another tool call to obtain more information.
+
+## Key concepts
+
+![alt text](image-10.png)
+
+1. Retrieval system: Retrieve relevant information from a knowledge base.
+
+2. Adding external knowledge: Pass retrieved information to a model.
+
+- offers several advantages:
+
+
+- Up-to-date information: RAG can access and utilize the latest data, keeping responses current.
+- Domain-specific expertise: With domain-specific knowledge bases, RAG can provide answers in specific domains.
+- Reduced hallucination: Grounding responses in retrieved facts helps minimize false or invented information.
+- Cost-effective knowledge integration: RAG offers a more efficient alternative to expensive model fine-tuning.
