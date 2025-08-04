@@ -50,10 +50,25 @@
 
 - Formally, we define the original context that is to be compressed as w=(w1,w2,....,wn) where $w_i$ represents the $i^{\text{th}}$ token of context and n is the number of tokens in context.
 
-- Then we denote e(.) as the word embedding lookup in the LLM and $\^~e$(.) as the learnable embeddings of soft tokens. 
+- Then we denote e(.) as the word embedding lookup in the LLM and $\tilde{e}$(.) as the learnable embeddings of soft tokens. 
 
 - A context compressor model $\Theta$ utilizes the embeddings of soft tokens $\tilde{e}(d) = (\tilde{e}(d_1), \tilde{e}(d_2), \ldots, \tilde{e}(d_k))$ and context embeddings $e(w) = (e(w_1), e(w_2), \ldots, e(w_n))$ to generate compact representations $\tilde{d} = (\tilde{d}_1, \tilde{d}_2, \ldots, \tilde{d}_k)$ of the context, where $k$ is the length of the compressed context and $k \ll n$.
 
 - The condensed vectors $\tilde{d}$ can substitute the original context and can be combined with another prompt $e(p) = (e(p_1), e(p_2), \ldots, e(p_l))$ for input to an LLM $\phi$.
 
 - The output $y = (y_1, \ldots, y_m)$ remains faithful to the content of the original context $w$.
+
+### In-Context Former
+
+- IC-Former consists of a few cross-attention layers and a set of learnable soft tokens, which are called _digest tokens_. 
+
+- The IC-Former utilizes context tokens and disgest tokens as inputs, leveraging a casual cross-attention mechanism to condense the context information into digest vectors. 
+
+![](image-2.png)
+
+- **Attention Computation** : when compressing a long context, the context tokens are concatenated with digest tokens and subsequently mapped into embeddings, which serve as key and value in the cross-attention layer. 
+
+    - Meanwhile, the embeddings of the digest tokens serve as query to interact with both context embeddings and digest embeddings. To be specific, the Q,K and V in IC-former can be computed as:
+        ``
+        Q=$W_Q$$\tilde{e}(d)^T$
+        ``
