@@ -48,7 +48,7 @@
 
 - Context compression aims to transform lengthy contexxts into brief, compact representations while endeavoring to preserve the fundamental semantics and integrity of the original contexts.
 
-- Formally, we define the original context that is to be compressed as w=(w1,w2,....,wn) where w$\_i$ represents the i$\^th$ token of context and n is the number of tokens in context.
+- Formally, we define the original context that is to be compressed as w=(w1,w2,....,wn) where $w_i$ represents the $i^{\text{th}}$ token of context and n is the number of tokens in context.
 
 - Then we denote e(.) as the word embedding lookup in the LLM and $\^~e$(.) as the learnable embeddings of soft tokens. 
 
