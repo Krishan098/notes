@@ -69,6 +69,29 @@
 - **Attention Computation** : when compressing a long context, the context tokens are concatenated with digest tokens and subsequently mapped into embeddings, which serve as key and value in the cross-attention layer. 
 
     - Meanwhile, the embeddings of the digest tokens serve as query to interact with both context embeddings and digest embeddings. To be specific, the Q,K and V in IC-former can be computed as:
-        ``
-        Q=$W_Q$$\tilde{e}(d)^T$
-        ``
+        $$
+        Q = W_Q \tilde{e}(d)^T
+
+        K = W_K[e(w); \tilde{e}(d)]^T
+
+        V = W_V[e(w); \tilde{e}(d)]^T
+        $$
+
+    - Then we employ the cross-attention mechanism to condense contextual information, as this approach has been empirically validated effective in multimodal information extraction. 
+
+- **Attention Masks**: The design for attention masks allows digest tokens to attend to all context tokens as well as preceeding digest tokens, thereby mitigating the deficiency of interaction among context tokens.
+
+- Additionally, it can be observed from the attention matrix that given a context length of n and a target compression length of k, the time complexity of our method are both $$O(kn+k^2) {~} O(kn)$$.
+
+- **Positional embeddings:** The pure cross-attention mechanism doesn't capture the relative positional relationships among tokens within the context. This implies swapping any two tokens in the context results in an identical digest vector, which does not align with our expectations. 
+
+- To address, IC-Former uses RoPE to represent the relative positional relations within the context tokens.
+
+- We denote the positional embeddings of the nth token in the sequence as RoPE(n) and is abbreviated as $R_n$.
+
+- $$RoPE(n)= \begin{bmatrix}R_n^(0) & & & & \\
+                            & R_n^(1) & & & \\
+                            & & & & \ddots & \\
+                            & & & & & R_n^(h/2-1)
+                            \end{bmatrix}
+$$
