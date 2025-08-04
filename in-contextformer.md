@@ -112,24 +112,22 @@ $$ \theta = {\theta_{\text{base}}}^{-2/h}$$
 
 - Therefore:
 
-    $$
-    Q=(q_1,q_2,....,q_{\text{k}})
-    
-    K=(k_1,....,k_{\text{n}},k_{\text{n+1}},...,k_{\text{n+k}})
-    $$
+$$
+Q=(q_1,q_2,\ldots,q_{\text{k}})\\
+K=(k_1,\ldots,k_{\text{n}},k_{\text{n+1}},\ldots,k_{\text{n+k}})
+$$
 
 - It allocates positional embeddings as if placing the digest tokens subsequent to the context tokens as demonstrated below:
 
-    $$
-    Q_{\text{RoPE}} = (R_{\text{n+1}}q_1,R_{\text{n+2}}q_2,...,R_{\text{n+k}}q_{\text{k}})
-    
-    K_{\text{RoPE}}=(R_1k_1,...,R_{\text{n}}k_{\text{n}},...,R_{\text{n+k}}k_{\text{n+k}})
-    $$
+$$
+Q_{\text{RoPE}} = (R_{\text{n+1}}q_1,R_{\text{n+2}}q_2,\ldots,R_{\text{n+k}}q_{\text{k}})\\
+K_{\text{RoPE}}=(R_1k_1,\ldots,R_{\text{n}}k_{\text{n}},\ldots,R_{\text{n+k}}k_{\text{n+k}})
+$$
 
 - The RoPE manifests the relative positional relationships through the inner product between $Q_{\text{RoPE}}$ and $K_{\text{RoPE}}$:
 
-    $$
-    {(R_{\text{i}}q)}^T(R_{\text{k}}k)=q^T{R_{\text{i}}}^T{R_{\text{j}}}k = q^T{R_{\text{j-i}}}k
-    $$
+$$
+{(R_{\text{i}}q)}^T(R_{\text{k}}k)=q^T{R_{\text{i}}}^T{R_{\text{j}}}k = q^T{R_{\text{j-i}}}k
+$$
 
 - In this manner, each digest token is capable of percieving the relative positions of both context tokens and other digest tokens.
