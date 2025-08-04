@@ -96,14 +96,40 @@ $$ RoPE(n)= \begin{bmatrix}R_n^{(0)} & & & & \\
                             \end{bmatrix}
 $$
 
-$$\[
-\text{RoPE}(n) =
-\begin{bmatrix}
-R_n^{(0)} &        & \cdots &        & 0 \\
-         & R_n^{(1)} &        &        & \\
-\vdots   &        & \ddots &        & \vdots \\
-         &        &        & \ddots & \\
-0        &        & \cdots &        & R_n^{(h/2 - 1)}
-\end{bmatrix}
-\]
+where 
+
 $$
+    R_n^{\text(i)}= \begin{bmatrix}cos(n{\theta}^{\text{i}}) & -sin(n{\theta}^{\text{i}})\\
+    sin(n{\theta}^{\text{i}}) & cos(n{\theta}^{\text{i}})
+    \end{bmatrix}
+$$
+
+- In this equation , 
+
+$$ \theta = {\theta_{\text{base}}}^{-2/h}$$ 
+
+- where $\theta_{\text{base}}$ is a hyperparameter and h is the hidden size and assumed to be even.
+
+- Therefore:
+
+    $$
+    Q=(q_1,q_2,....,q_{\text{k}})
+    
+    K=(k_1,....,k_{\text{n}},k_{\text{n+1}},...,k_{\text{n+k}})
+    $$
+
+- It allocates positional embeddings as if placing the digest tokens subsequent to the context tokens as demonstrated below:
+
+    $$
+    Q_{\text{RoPE}} = (R_{\text{n+1}}q_1,R_{\text{n+2}}q_2,...,R_{\text{n+k}}q_{\text{k}})
+    
+    K_{\text{RoPE}}=(R_1k_1,...,R_{\text{n}}k_{\text{n}},...,R_{\text{n+k}}k_{\text{n+k}})
+    $$
+
+- The RoPE manifests the relative positional relationships through the inner product between $Q_{\text{RoPE}}$ and $K_{\text{RoPE}}$:
+
+    $$
+    {(R_{\text{i}}q)}^T(R_{\text{k}}k)=q^T{R_{\text{i}}}^T{R_{\text{j}}}k = q^T{R_{\text{j-i}}}k
+    $$
+
+- In this manner, each digest token is capable of percieving the relative positions of both context tokens and other digest tokens.
