@@ -89,9 +89,20 @@
 
 - We denote the positional embeddings of the nth token in the sequence as RoPE(n) and is abbreviated as $R_n$.
 
-- $$RoPE(n)= \begin{bmatrix}R_n^(0) & & & & \\
-                            & R_n^(1) & & & \\
-                            & & & & \ddots & \\
-                            & & & & & R_n^(h/2-1)
+- $$ RoPE(n)= \begin{bmatrix}R_n^{(0)} & & & & \\
+                            & R_n^{(1)} & & & \\
+                            & & \ddots & & \\
+                            & & & & R_n^{(h/2-1)}
                             \end{bmatrix}
 $$
+
+\[
+\text{RoPE}(n) =
+\begin{bmatrix}
+R_n^{(0)} &        & \cdots &        & 0 \\
+         & R_n^{(1)} &        &        & \\
+\vdots   &        & \ddots &        & \vdots \\
+         &        &        & \ddots & \\
+0        &        & \cdots &        & R_n^{(h/2 - 1)}
+\end{bmatrix}
+\]
