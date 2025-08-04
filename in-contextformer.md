@@ -52,10 +52,8 @@
 
 - Then we denote e(.) as the word embedding lookup in the LLM and $\^~e$(.) as the learnable embeddings of soft tokens. 
 
-A context compressor model &#920; utilizes the embeddings of soft tokens $\^{~}e$(d)= ($\^{~}e$(d$\_1$),$\^~e$(d\_2$),.....$\^~e$(d$\_k$)) and context embeddings e(w)=(e(w~1~),e(w~2~),....e(w~n~)) to generate compact representations d&#7771;= (^~^d~1~,^~^d~2~,....,^~^d~k~) of context, where k is the length of compressed context and k<<n.
+- A context compressor model $\Theta$ utilizes the embeddings of soft tokens $\tilde{e}(d) = (\tilde{e}(d_1), \tilde{e}(d_2), \ldots, \tilde{e}(d_k))$ and context embeddings $e(w) = (e(w_1), e(w_2), \ldots, e(w_n))$ to generate compact representations $\tilde{d} = (\tilde{d}_1, \tilde{d}_2, \ldots, \tilde{d}_k)$ of the context, where $k$ is the length of the compressed context and $k \ll n$.
 
+- The condensed vectors $\tilde{d}$ can substitute the original context and can be combined with another prompt $e(p) = (e(p_1), e(p_2), \ldots, e(p_l))$ for input to an LLM $\phi$.
 
-- The condensed vectors d&#7771; can substitute the original context and can be combined with other prompt e(p)=(e(p~1~),e(p~2~),....,e(p~l~)) for input to an LLM $\phi$.
-
-
-- The output y=(y~1~,.....,y~m~) remains faithful to the content of the original context w. fix the latex in here for the md file.
+- The output $y = (y_1, \ldots, y_m)$ remains faithful to the content of the original context $w$.

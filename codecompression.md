@@ -145,3 +145,7 @@
 ### inspiration
 
 - Modular AI Systems: The success of the decoupled compressor highlights the benefits of a modular design in LLM pipelines, where specialized components handle specific tasks (like compression) without affecting the core LLM.
+
+## EVALUATION
+
+- The primary method for assessing the correctness of generated code across multiple papers is through execution on unit tests. Benchmarks like HumanEval, MBPP, and APPS measure performance using metrics such as "Pass@1," which indicate whether the generated code successfully passes a set of provided test cases
