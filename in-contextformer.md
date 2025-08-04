@@ -48,11 +48,11 @@
 
 - Context compression aims to transform lengthy contexxts into brief, compact representations while endeavoring to preserve the fundamental semantics and integrity of the original contexts.
 
-- Formally, we define the original context that is to be compressed as w=(w1,w2,....,wn) where w$_i$ represents the i$^th$ token of context and n is the number of tokens in context.
+- Formally, we define the original context that is to be compressed as w=(w1,w2,....,wn) where w$\_i$ represents the i$\^th$ token of context and n is the number of tokens in context.
 
-- Then we denote e(.) as the word embedding lookup in the LLM and &#7689;(.) as the learnable embeddings of soft tokens. 
+- Then we denote e(.) as the word embedding lookup in the LLM and $\^~e$(.) as the learnable embeddings of soft tokens. 
 
-- A context compressor model &#920; utilizes the embeddings of soft tokens &#7689;(d)= (&#7689;(d~1~),&#7689;(d~2~),.....&#7689;(d~k~)) and context embeddings e(w)=(e(w~1~),e(w~2~),....e(w~n~)) to generate compact representations d&#7771;= (^~^d~1~,^~^d~2~,....,^~^d~k~) of context, where k is the length of compressed context and k<<n.
+- A context compressor model &#920; utilizes the embeddings of soft tokens $\^~e$(d)= ($\^~e$(d$\_1$),$\^~e$(d\_2$),.....$\^~e$(d$\_k$)) and context embeddings e(w)=(e(w~1~),e(w~2~),....e(w~n~)) to generate compact representations d&#7771;= (^~^d~1~,^~^d~2~,....,^~^d~k~) of context, where k is the length of compressed context and k<<n.
 
 - The condensed vectors d&#7771; can substitute the original context and can be combined with other prompt e(p)=(e(p~1~),e(p~2~),....,e(p~l~)) for input to an LLM $\phi$. 
 
