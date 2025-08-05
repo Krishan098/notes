@@ -108,9 +108,9 @@ $$
 
 $$ \theta = {\theta_{\text{base}}}^{-2/h}$$ 
 
-- where $\theta_{\text{base}}$ is a hyperparameter and h is the hidden size and assumed to be even.
+where $\theta_{\text{base}}$ is a hyperparameter and h is the hidden size and assumed to be even.
 
-- Therefore:
+Therefore:
 
 $$
 Q=(q_1,q_2,\ldots,q_{\text{k}})\\
@@ -131,3 +131,63 @@ $$
 $$
 
 - In this manner, each digest token is capable of percieving the relative positions of both context tokens and other digest tokens.
+
+### Training Process
+
+- It includes pretraining, finetuning and a divide-and-conquer approach when dealing with too long texts.
+
+
+**Pretraining:** Previous works have demonstrated that auto-encoding tasks can benefit models to effectively condense and encode information. The same approach has been adopted by IC-Former by using a recinstruction task. 
+
+
+The objective of this task is to leverage digest vectors, which are extracted from compressed contexts, to reconstruct the original contexts. The context tokens are compressed into digest vectors by IC-Former and then serve as an input to LLM with a special token "[AE]" to indicate the autoencoding task.
+
+
+The pretrainign objective can be written as:
+
+$$
+L_{\text{AE}} = - logp(w|\tilde{d_1},\ldots,\tilde{d_{\text{k}}};\phi)
+
+= -logp(w|d_1,\ldots,d_{\text{k}};\tilde{e};\theta;\phi)
+$$
+
+- This reconstruction task forces IC-Former to focus on each token in context, thereby preserving all context information. The analysis on pretraining demonstrates that this task can help IC-Former learn to aggregate contextual information.
+
+- **Instruction fine-tuning:** After the pretraining phase, IC-Former has effectively learned to meticulously attend to context. However,to ensure that the compressed digest vectors appropriately respond to various prompts, further instruction fine-tuning  is done.
+
+- Input the digest vectors generated from IC-Former along with the prompt embeddings into the LLMs. Similarly by optimizing IC-Former $\theta$ and digest embeddings $\tilde{e}(d)$, we minimize the negative log-likelihood of the expected output y:
+
+$$
+L_{\text{FT}} = -log p(y|\tilde{d_1},\ldots,\tilde{d_{\text{k}}};p_1,\ldots,p_{\text{l}};\theta;\phi)
+
+= -log P(y|d_1,\ldots,d_{\text{k}};p_1,\ldots,p_{\text{l}};\tilde{e};\theta;\phi)
+$$
+
+- **Divide and Conquer:** When the context length exceeds the compression limit, a divide and conquer strategy proves to be effective. 
+
+- It first uniformly splits the context into several chunks of acceptable length. Each of these chunks is then compressed individually to obtain local vectors. It subsequently concatenate all these local vectors to form the global vectors. This is applied in both the training and inference phases.
+
+![alt text](image-3.png)
+
+#### Experimental settings
+
+- It uses a subset of the Pile dataset for pretraining. In finetuning it used the PwC(Prompt-with-Context) dataset.
+
+- For each context, the dataset provides ten specific and five general questions. For evaluation convenience, it selects the ten specific questions to evaluate as their answers are relatively more definitive.
+
+- **BASELINE**: ICAE
+
+- **Model configuration:** Llama2-7b-chat
+
+![alt text](image-4.png)
+
+
+![alt text](image-5.png)
+
+### Limitations
+
+1. It doesnot surpass the baseline's performance in downstream tasks.
+
+## Reference
+
+- [In-Context Former](https://arxiv.org/pdf/2406.13618)
