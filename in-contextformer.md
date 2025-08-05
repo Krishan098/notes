@@ -6,7 +6,7 @@
 
 - Despite these methods, the compression process still has a quadratic time complexity. 
 
-- Unlike these methods, IC-Former doesnot depend on the target LLMs. Instead it leverages the cross-attention mechanism and a small number of learnable digest tokens to directly condense information from the contextual word embeddings. This approach significantly reduces inference time, whcih achieves linear growth in time complexity within the compression range. 
+- Unlike these methods, IC-Former doesnot depend on the target LLMs. Instead it leverages the cross-attention mechanism and a small number of learnable digest tokens to directly condense information from the contextual word embeddings. This approach significantly reduces inference time, which achieves linear growth in time complexity within the compression range. 
 
 - It requires only 1/32 of the floating-point operations of the baseline during compression and improves processing speed by 68 to 112 times while achieving over 90% of the baseline performance on evaluation metrics.
 
