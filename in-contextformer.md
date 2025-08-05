@@ -146,8 +146,7 @@ The objective of this task is to leverage digest vectors, which are extracted fr
 The pretrainign objective can be written as:
 
 $$
-L_{\text{AE}} = - logp(w|\tilde{d_1},\ldots,\tilde{d_{\text{k}}};\phi)
-
+L_{\text{AE}} = - logp(w|\tilde{d_1},\ldots,\tilde{d_{\text{k}}};\phi)\\
 = -logp(w|d_1,\ldots,d_{\text{k}};\tilde{e};\theta;\phi)
 $$
 
@@ -158,8 +157,7 @@ $$
 - Input the digest vectors generated from IC-Former along with the prompt embeddings into the LLMs. Similarly by optimizing IC-Former $\theta$ and digest embeddings $\tilde{e}(d)$, we minimize the negative log-likelihood of the expected output y:
 
 $$
-L_{\text{FT}} = -log p(y|\tilde{d_1},\ldots,\tilde{d_{\text{k}}};p_1,\ldots,p_{\text{l}};\theta;\phi)
-
+L_{\text{FT}} = -log p(y|\tilde{d_1},\ldots,\tilde{d_{\text{k}}};p_1,\ldots,p_{\text{l}};\theta;\phi)\\
 = -log P(y|d_1,\ldots,d_{\text{k}};p_1,\ldots,p_{\text{l}};\tilde{e};\theta;\phi)
 $$
 
