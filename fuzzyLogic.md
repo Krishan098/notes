@@ -10,7 +10,9 @@
 
 - need to consider the impreciseness of language to correctly encode them.
 
-- crisp input-> -------------
-               |fuzzification|
-               |-------------|
+- crisp input-> fuzzification(fuzzifier)->fuzzy logic rules(Inference)->Defuzzification->crisp output.
+
+- we can approach the problem in the opposite cirection
+
+- A fuzzy inference system: a framework with unknown rules and membership functions.
   
