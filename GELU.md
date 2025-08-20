@@ -2,7 +2,7 @@
 
 ## Abstract
 
-- It is denoted by $x\phi(x)$, where $\phi(x)$ the standarf Gaussian cumulative distribution function. The GELU nonlinearity weights inputs by their value, rather than gates inputs by their sign as in RelUs $(x1_{\text{x>0}})$. 
+- It is denoted by $x\phi(x)$, where $\phi(x)$ the standard Gaussian cumulative distribution function. The GELU nonlinearity weights inputs by their value, rather than gates inputs by their sign as in RelUs $(x1_{\text{x>0}})$. 
 
 ## Introduction
 
