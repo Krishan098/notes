@@ -19,13 +19,13 @@
 
 - Scaling weakly supervised speech recognition the next order of magnitude to 680,000 hours of labeled audio data.
 
-- This work suggests that simple scling of weakly supervised pre-training has been underappreciated so far.
+- This work suggests that simple scaling of weakly supervised pre-training has been underappreciated so far.
 ---
 ## Approach 
 
 ### Data Processing
 
-- Whisper has been trained predict the raw text of transcripts without any significant standardization,relying on the expressiveness of the sequence-to-sequence models to learn to map between utterances and their transcribed form.
+- Whisper has been trained to predict the raw text of transcripts without any significant standardization,relying on the expressiveness of the sequence-to-sequence models to learn to map between utterances and their transcribed form.
 
 - For the dataset the audio is paired with their respective transcripts available on the internet. This results in a very diverse dataset covering a broad distribution of audio from many different environments, recording setups,speakers and languages. 
 
