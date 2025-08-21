@@ -44,7 +44,7 @@
 - They broke audio files down into 30 segments paired with the subset of the transcript that occurs within that time segment. They trained it on all audio including segments where there is no speech.
 
 - For an additional filtering pass, after training an initial model they aggregated information about its error rate on training data sources and performed manual inspection of these data sources sorting by a combination of both high error rate and data source size in order to identify and remove low-quality ones efficiently. This inspection showed a large number of poorly aligned transcripts as well as remaining low-quality machine -generated captions that filtering heuristics did not detect.
-
+---
 ### Model
 
 - Used an encoder-decoder structure. 
@@ -58,6 +58,35 @@
 - Sinusoidal position embeddings are then added to the output of the stem after which the encoder Transformer blocks are applied. The transformer uses pre-activation residual blocks and a final layer normalization is applied to the encoder output. The decoder uses learned position embeddings and tied input-output token representations.
 
 - The encoder and decoder have the same width and number of transformer blocks.
-
+---
 ### Multitask Format
 
+- A fully featured speech recognition system can involve many additional components such as voice activity detection, speaker diarization and inverse text normalization. 
+
+- Many tasks can be performed on the same input signal: transcription, translation, voice activity detection, alignment, and language identification etc.
+
+- A simple format to specify all tasks and conditioning information as a sequence of input tokens to the decoder. Since the decoder is an audio-conditional language model, we also train it to condition on the history of text of the transcript in the hope that it will learn to use longer-range text context to resolve ambiguous audio. 
+
+- With some probability they add the transcript text preceeding the current audio segment to the decoder's context. 
+
+- Indicate the beginning of prediction with a <|startoftranscript|> token.
+
+- First, predict the language being spoken which is represented by a unique token for each language in the training set.
+
+- For the audio segments where there is no speech, the model is trained to predict <|nospeech|> token indicating this. The next token specifies the task (either transcriptopn <|trancribe|> or translation<|translate|>). 
+
+- Another token <|notimestamps|> is used to decide whether to predict timestamps or not.
+
+- Lastly , a <|endoftranscript|> token is added.
+
+- Only mask out the training loss over the previous context textt and train the model  to predict all other tokens.
+
+![alt text](image-15.png)
+---
+### Training Details
+
+- Training has been done with data parallelism across accelerators using FP16 with dynamic loss scaling and activation checkpointing.
+
+- trained with AdamW and gradient norm clipping with a linear learning rate decay to zero after a warmup over the first 2048 updates. 
+
+- A batch size of 256 segments was used, and the models are trained for $2^20$ updates which is between two and three passes over the dataset. 
