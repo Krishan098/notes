@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Gaussian Error Linear Units"
+categories: [Machine Learning]
+---
 # Gaussian Error Linear Units(GELU)
 
 ## Abstract

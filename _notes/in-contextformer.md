@@ -1,3 +1,8 @@
+---
+layout: post
+title: "In-Context Former"
+categories: [Code compression to reduce hallucinations]
+---
 # In-Context Former: Lightning-fast Compressing Context for Large Language Model
 
 ## Abstract

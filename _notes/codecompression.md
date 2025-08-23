@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Summary for the three papers"
+categories: [Code compression to reduce hallucinations]
+---
 # Orchestrating Structure and Efficiency in LLM contexts
 
 - **AST-T5**: enhances code understanding by leveraging **Abstract Syntax Tree** structures without complex architectural changes, leading to superior parameter efficiency.

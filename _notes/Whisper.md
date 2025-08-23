@@ -1,3 +1,8 @@
+---
+layout: post
+title: "WHISPER"
+categories: [Machine Learning]
+---
 # Robust Speech Recognition via Large-Scale Weak Supervision
 ---
 ## Abstract

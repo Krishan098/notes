@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Fuzzy Logic"
+categories: [Machine Learning]
+---
+
 # Fuzzy Logic
 
 - fuzzy logic is a way to model logical reasoning where the truth of a statement is not binary.

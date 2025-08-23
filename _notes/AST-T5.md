@@ -1,3 +1,10 @@
+---
+layout: post
+title: "AST-T5"
+categories: [Code compression to reduce hallucinations]
+---
+
+
 # AST-T5: Structure-Aware Pretraining for Code Generation and Understaning
 
 ## Abstract

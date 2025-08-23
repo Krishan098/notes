@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Introduction to LangChain"
+categories: [LangChain]
+---
 # INTRO
 - Framework for developing applications powered by LLMs.
 
