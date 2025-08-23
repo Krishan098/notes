@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Agents"
+categories: [RAG]
+---
 # Agents:
 
 - By themselves, language models can't take actions - they just output text. Agents are systems that take a high-level task and use an LLM as a reasoning engine to decide what actions to take and execute those actions.

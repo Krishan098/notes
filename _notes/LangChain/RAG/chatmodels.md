@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Chat Models"
+categories: [RAG]
+---
 # Chat Models
 
 - Chat models are language models that use a sequence of messages as inputs and return messages as outputs. 

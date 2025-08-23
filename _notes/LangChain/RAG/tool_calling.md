@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Tool Calling"
+categories: [RAG]
+---
 # Tool Calling/Function calling
 
 - Many AI applications interact directly with humans. In these cases, it is appropriate for models to respond in natural language. But what about cases where we want a model to also interact directly with systems, such as databases or an API? These systems often have a particular input schema; for example, APIs frequently have a required payload structure. This need motivates the concept of tool calling. 

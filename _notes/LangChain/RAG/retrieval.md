@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Retrieval"
+categories: [RAG]
+---
 # Retrieval
 
 ## Overview 

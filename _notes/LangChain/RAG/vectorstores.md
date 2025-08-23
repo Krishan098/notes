@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Vector Stores"
+categories: [RAG]
+---
 # Vector Stores
 - Vector stores are specialized data stores that enable indexing and retrieving information based on vector representations.
 - these vectors are called embeddings, capture the semantic meaning of data that has been embedded.

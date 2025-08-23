@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Graphs"
+categories: [RAG]
+---
 # Graphs
 
 1. State: A shared data structure that represents the current snapshot of your application.

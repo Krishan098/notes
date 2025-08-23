@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Chat History"
+categories: [RAG]
+---
 # Chat history
 
 - Chat history is a record of the conversation between user and chat model. It is used to maintain context and state throughout the conversation.

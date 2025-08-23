@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Subgraphs"
+categories: [RAG]
+---
 # Subgraphs
 - A subgraph is a graph that is used as a node in another graph. 
 - encapsulation applied to LangGraph.

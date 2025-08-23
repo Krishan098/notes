@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Embedding Models"
+categories: [RAG]
+---
 # Embedding models
 
 - embedding models are able to capture the essence of any text-a tweet,document or book in a single, compact representation.

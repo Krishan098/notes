@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Text splitters"
+categories: [RAG]
+---
 # Text Splitters
 
 ## Overview

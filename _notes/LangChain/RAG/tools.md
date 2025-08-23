@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Tools"
+categories: [RAG]
+---
 # TOOLS
 - The tool abstraction in LangChain associates a Python function with a schema that defines the function's name, description and expected arguments.
 
