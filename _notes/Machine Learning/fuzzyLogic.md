@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Fuzzy Logic"
 categories: [Machine Learning]
 ---

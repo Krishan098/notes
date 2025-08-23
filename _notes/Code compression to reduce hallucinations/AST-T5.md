@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "AST-T5"
 categories: [Code compression to reduce hallucinations]
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Chat History"
 categories: [RAG]
 ---

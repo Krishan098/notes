@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Gaussian Error Linear Units"
 categories: [Machine Learning]
 ---

@@ -28,4 +28,4 @@ description: "You can find notes related to various machine learning and deep le
 collections:
   notes:
     output: true
-    permalink: /notes/:name/
+    permalink: /notes/:path/

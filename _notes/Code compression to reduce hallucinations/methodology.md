@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Methodology"
 categories: [Code compression to reduce hallucinations]
 ---

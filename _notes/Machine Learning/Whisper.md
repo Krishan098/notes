@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "WHISPER"
 categories: [Machine Learning]
 ---

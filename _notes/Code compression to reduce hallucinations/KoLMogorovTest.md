@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "KolMogorov Test"
 categories: [Code compression]
 ---

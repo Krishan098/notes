@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "In-Context Former"
 categories: [Code compression to reduce hallucinations]
 ---

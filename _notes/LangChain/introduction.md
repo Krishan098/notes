@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Introduction to LangChain"
 categories: [LangChain]
 ---

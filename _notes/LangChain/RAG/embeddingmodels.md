@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Embedding Models"
 categories: [RAG]
 ---

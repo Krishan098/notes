@@ -34,6 +34,7 @@ This is a collection of few of the things I have studied so far. Will try to add
 - [{{ note.title | default: note.name | replace: ".md", "" | replace: "-", " " | capitalize }}]({{ note.url }})
 {% endfor %}
 
+
 ---
 
 ###  Browse All Notes by Category

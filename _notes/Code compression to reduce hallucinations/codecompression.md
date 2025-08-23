@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Summary for the three papers"
 categories: [Code compression to reduce hallucinations]
 ---

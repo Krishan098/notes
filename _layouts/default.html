@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+</head>
+<body>
+    <div class="container-lg px-3 my-5 markdown-body">
+        <header>
+            <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+            <p>{{ site.description }}</p>
+        </header>
+        
+        <main>
+            {{ content }}
+        </main>
+        
+        <footer style="margin-top: 2em; padding-top: 1em; border-top: 1px solid #eee; color: #666;">
+            <p><a href="{{ site.baseurl }}/">← Back to Home</a></p>
+        </footer>
+    </div>
+</body>
+</html>
