@@ -12,7 +12,7 @@
 
     3. Answer the question
 
-![alt text](image.png)
+![alt text](images/image.png)
 m
 ## Chains 
 
@@ -73,7 +73,7 @@ m
 ## Persistence
 
 - LangGraph has a built-in persistence layer, implemented through checkpointers. When you compile graph with a checkpointer, the checkpointer saves a checkpoint of the graph state at every super-step. Those checkpoints are saved to a thread, which can be accessed after graph execution. Because threads allow access to graph's state after execution, several powerful capabilities including human-in-the-loop, memory, time travel, and fault-tolerance are all possible. 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 - Threads: A thread is a unique ID assigned to each checkpoint saved by a checkpointer.
 

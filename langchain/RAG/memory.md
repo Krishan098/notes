@@ -5,7 +5,7 @@
 
 2. Long-term memory is shared across conversational threads. It can be recalled at any time and in any thread. Memories are scoped to any custom namespace, not just within a single thread ID. LangGraph provides stores (reference doc) to let you save and recall long-term memories.
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 refernce
 https://langchain-ai.github.io/langgraph/concepts/memory/#what-is-memory

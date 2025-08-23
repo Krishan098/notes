@@ -121,7 +121,7 @@
 
 ## Key concepts
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 1. Retrieval system: Retrieve relevant information from a knowledge base.
 

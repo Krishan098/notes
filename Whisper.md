@@ -81,7 +81,7 @@
 
 - Only mask out the training loss over the previous context textt and train the model  to predict all other tokens.
 
-![alt text](image-15.png)
+![alt text](images/image-15.png)
 ---
 ### Training Details
 

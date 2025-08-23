@@ -5,7 +5,7 @@
 - It invoves breaking down large texts into smaller, manageable chunks. This process offers several benefits, such as ensuring consistent processing of varying document lengths, overcoming input size of limitations of models and improving the quality of text representations used in retrieval systems.
 
 ## Key concepts
-![alt text](image-17.png)
+![alt text](images/image-17.png)
 - Text splitters split documents into smaller chunks for use in downstream applications.
 
 ## Why split documents

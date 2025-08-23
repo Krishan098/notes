@@ -12,7 +12,7 @@
 
 ## Introduction
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 - The self attention improvement mechanisms mitigate the overhead of long context processing, they inevitably introduce modifications to the original structure of LLMs, potentially impacting the capabilities of the original model.
 
@@ -40,7 +40,7 @@
 
 - In the fine-tuning phase, the IC-Former is trained to ensure that the generated digest vectors correctly respond to various context-related prompts.
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ## Method 
 
@@ -64,7 +64,7 @@
 
 - The IC-Former utilizes context tokens and disgest tokens as inputs, leveraging a casual cross-attention mechanism to condense the context information into digest vectors. 
 
-![](image-2.png)
+![](images/image-2.png)
 
 - **Attention Computation** : when compressing a long context, the context tokens are concatenated with digest tokens and subsequently mapped into embeddings, which serve as key and value in the cross-attention layer. 
 
@@ -165,7 +165,7 @@ $$
 
 - It first uniformly splits the context into several chunks of acceptable length. Each of these chunks is then compressed individually to obtain local vectors. It subsequently concatenate all these local vectors to form the global vectors. This is applied in both the training and inference phases.
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 #### Experimental settings
 
@@ -177,10 +177,10 @@ $$
 
 - **Model configuration:** Llama2-7b-chat
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 ### Limitations
 

@@ -6,7 +6,7 @@
 - allows search systems to find releavnt documents based on semantic understanding.
 
 ## Key concepts
-![alt text](image-16.png)
+![alt text](images/image-16.png)
 
 1. Embed text as a vector: Embeddings transform text into a numerical vector representation.
 2. Measure similarity: vectors can be compared using simple mathematical operations.

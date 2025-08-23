@@ -3,7 +3,7 @@
 - these vectors are called embeddings, capture the semantic meaning of data that has been embedded.
 - Vector stores are frequently used to search over unstructures data, such as text, images and audio, to retrieve relevant information based on semantic similarity rather than exact keyword matches.
 
-![alt text](image-18.png)
+![alt text](images/image-18.png)
 
 ## Interface
 

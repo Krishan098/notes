@@ -26,7 +26,7 @@
 
     3. a unified, structure-aware pretraining framework that boosts performance across a variety of code-related tasks, particularly in code transpilation.
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 - In addition, other than the specialized AST-aware masking approach, AST-T5 introducs no architecture changes or additional heads. This compatibility enables seamless integration of our model as a drop-in replacement for any T5 variant.
 
@@ -71,10 +71,10 @@ $$
 dp[k,i]=cost[i]+ min_{\text{i-max_leng<=j<i}}dp[k-1,j]
 $$
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 3. While the naive DP algorithm has a quadratic time complexity $O(n^2)$ relative to the code file length n, it can be optimized to $O(n^2/max_len)$ by employing a monotonic queue for sliding-window minimum calculations. This allows for efficient computation across most code files. 
 
@@ -107,7 +107,7 @@ $$
 - The parameter $\theta$ controls the granularity of masking. $\theta$ is randomly sampled within a predefined range(5-100) for each training example. This allows the pretraining framework to inherently accomodate tasks as varied as single-token completion to full function body generation from a given signature.
 
 - The masking technique aims at the masking of ASt subtrees, potentially encompassing up to 100 tokens.
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 - **Pretraining objective**: Once subtrees are selected for masking and replaced with sentinel tokens, the encoder processes this modified input. Subsequently the decoder is tasked with reconstructing the original tokens within the masked subtrees. 
 
@@ -138,16 +138,16 @@ $$
     2. code-to-code transpilation
     3. Code classification
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 ## Results
 
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
-![alt text](image-13.png)
+![alt text](images/image-13.png)
 
 
 ## References

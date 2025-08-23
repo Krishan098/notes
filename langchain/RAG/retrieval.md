@@ -10,7 +10,7 @@
 
 ## Key concepts 
 
-- ![alt text](image-8.png)
+- ![alt text](images/image-8.png)
 
 1. Query analysis: A process where models transform or construct search queries to optimise retrieval.
 
@@ -77,7 +77,7 @@
 
 - An inverted index is an index data structure storing a mapping from content, such as words or numbers, to its location in a document or a set of documents. 
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 #### Vector indexes 
 
@@ -96,7 +96,7 @@
 1. input: a query
 2. Output: a list of documents
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 - The only requirement for a retriever is the ability to accepts a query and return documents. In particular, LangChain's retriever class only requires that the _get_relevant_documents method is implemented, which takes a query: str and returns a list of Document objects that are most relevant to the query. The underlying logic used to get relevant documents is specified by the retriever and can be whatever is most useful for the application.
 
@@ -133,7 +133,7 @@
 - Many retrievers utilize some kind of index to make documents easily searchable.
 
 - The process of indexing can include a transformation step.(vectorstores use document splitting)
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 - it ensures no loss in document context for the model.
 

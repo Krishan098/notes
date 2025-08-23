@@ -2,7 +2,7 @@
 - A subgraph is a graph that is used as a node in another graph. 
 - encapsulation applied to LangGraph.
 - allows to build complex systems with multiple components that are themselves graphs.
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 - Some reasons for using subgraphs are:
 

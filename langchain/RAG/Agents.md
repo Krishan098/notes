@@ -15,7 +15,7 @@
 
 3. An LLM can decide whether the generated answer is sufficient or more work is needed.
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ### Router 
 
@@ -55,7 +55,7 @@
 
 - The model will choose to call a tool based upon the natural language input from the user and it will return an output that adheres to the tool's required schema.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ### Memory 
 

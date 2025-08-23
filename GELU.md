@@ -28,7 +28,7 @@
 
 - Masking inputs in this fashion retains non-determinism but maintains dependency upon the input value. A stochastically chosen mask amounts to a stochastic zero or identity transformation of the input.
 
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 - We often want a deterministic decision from a neural network and this gives rise to the new nonlinearity.The non-linearity is the expected transformations of the stochastic regularizer on an input x, which is $\phi(\text{x})x I\text{x}+(1-\phi(x)) x 0\text{x}=x\phi(x)$
 

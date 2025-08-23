@@ -5,7 +5,7 @@
 
 ## Conversation Patterns
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 - Most conversations start with a system message that sets the context for the conversation. This is followed by a user message containing the user's input and then an assistant message containing the model's response.
 

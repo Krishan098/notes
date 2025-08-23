@@ -2,7 +2,7 @@
 
 - Many AI applications interact directly with humans. In these cases, it is appropriate for models to respond in natural language. But what about cases where we want a model to also interact directly with systems, such as databases or an API? These systems often have a particular input schema; for example, APIs frequently have a required payload structure. This need motivates the concept of tool calling. 
 
-![alt text](image-13.png)
+![alt text](images/image-13.png)
 
 ## Key concepts:
 
@@ -14,10 +14,10 @@
 
 4. Tool Execution: The tool can be executed using the arguments provided by the model.
 
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 ## Tool calling
-![alt text](image-15.png)
+![alt text](images/image-15.png)
 
 - A key principle of tool calling is that the model decides when to use a tool based on the input's relevance. The model doesn't always need to call a tool.
 

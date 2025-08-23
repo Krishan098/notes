@@ -14,7 +14,7 @@
 2. Specialization: You can create expert agents focused on specific domains, which helps with the overall system performance.
 3. Control: You can explicitly control how agents communicate (as opposed to relying on function calling).
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 - There are several ways to connect agents in a multi-agent system:
 
@@ -24,9 +24,9 @@
 4. Hierarchical: you can define a multi-agent system with a supervisor of supervisors. This is a generalization of the supervisor architecture and allows for more complex control flows.
 5. Custom multi-agent workflow: each agent communicates with only a subset of agents. Parts of the flow are deterministic, and only some agents can decide which other agents to call next.
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 
 # Reference 
