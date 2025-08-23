@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292f;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: white;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            padding: 3rem 2rem 2rem;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            top: -20px;
+        }
+        
+        /* Typography */
+        h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        h4 {
+            color: #5a67d8;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 1.25rem 0 0.5rem 0;
+        }
+        
+        p {
+            color: #57606a;
+            margin-bottom: 1rem;
+        }
+        
+        /* Lists */
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        li:before {
+            content: "📝";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Special emoji bullets for different sections */
+        .ml-section li:before { content: "🧠"; }
+        .compression-section li:before { content: "🗜️"; }
+        .langchain-section li:before { content: "🔗"; }
+        .rag-section li:before { content: "🤖"; }
+        .sql-section li:before { content: "💾"; }
+        .dsa-section li:before { content: "💻"; }
+        
+        /* Links */
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+            transform: translateY(-1px);
+        }
+        
+        /* Cards for categories */
+        .category-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* Details/Summary styling */
+        details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            border: 1px solid #e1e5e9;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #667eea;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        
+        summary:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+                border-radius: 15px 15px 0 0;
+            }
+            
+            .category-card {
+                padding: 1rem;
+            }
+        }
+        
+        /* Stats section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+    </div>
+    
+    <div class="container">
+        {{ content }}
+    </div>
+</body>
+</html>
