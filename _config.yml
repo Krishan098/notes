@@ -15,5 +15,10 @@ plugins:
 
 gem "github-pages", group: :jekyll_plugins
 
-title: Neutral Notes
-description: You can find notes related to various machine learning and deep learning topics including knowledge about various tools and frameworks.
+title: "Neutral Notes"
+description: "You can find notes related to various machine learning and deep learning topics including knowledge about various tools and frameworks."
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name
