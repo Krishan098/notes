@@ -16,15 +16,16 @@ exclude:
   - "pyproject.toml"
   - "uv.lock"
   - "README.md"
+  - ".env"
+  - "asttest.py"
+  - "main.py"
+  - "folder_structure.txt"
 remote_theme: pages-themes/architect@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-
-
-title: "Neutral Notes"
+  - jekyll-remote-theme
+title: "Neural Notes"
 description: "You can find notes related to various machine learning and deep learning topics including knowledge about various tools and frameworks."
-
 collections:
   notes:
     output: true
-    permalink: /notes/:name
+    permalink: /notes/:name/
