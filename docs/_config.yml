@@ -8,6 +8,7 @@ plugins:
 color_scheme: light
 search_enabled: true
 heading_anchors: true
+nav_exclude: ['images']
 aux_links:
   "GitHub":
     - "https://github.com/Krishan098/notes"
