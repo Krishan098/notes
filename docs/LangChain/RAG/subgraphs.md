@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Subgraphs"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 13
 ---
 # Subgraphs
 - A subgraph is a graph that is used as a node in another graph. 

@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Tokens"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 15
 ---
 
 # TOKENS

@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Better prompts"
-categories: [Q&Aoversql]
+parent: Q&A Over SQL
+grand_parent: LangChain
+nav_order: 2
 ---
 # How to better prompt when doing SQL question-answering
 

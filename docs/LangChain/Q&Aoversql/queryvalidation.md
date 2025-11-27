@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Query validation"
-categories: [Q&Aoversql]
+parent: Q&A Over SQL
+grand_parent: LangChain
+nav_order: 4
 ---
 
 # How to do query validation as part of SQL question-answering

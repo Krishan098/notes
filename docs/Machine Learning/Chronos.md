@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Chronos"
-categories: [Machine Learning]
+parent: Machine Learning
+nav_order: 1
 ---
 
 # Chronos

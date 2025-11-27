@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Graphs"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 6
 ---
 # Graphs
 

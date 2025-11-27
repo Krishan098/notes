@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Chat Models"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 3
 ---
 # Chat Models
 

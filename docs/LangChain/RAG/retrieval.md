@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Retrieval"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 10
 ---
 # Retrieval
 

@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Streaming"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 12
 ---
 
 # Streaming

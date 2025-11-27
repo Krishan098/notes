@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Tool Calling"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 17
 ---
 # Tool Calling/Function calling
 

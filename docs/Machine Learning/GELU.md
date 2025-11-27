@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Gaussian Error Linear Units"
-categories: [Machine Learning]
+parent: Machine Learning
+nav_order: 3
 ---
 # Gaussian Error Linear Units(GELU)
 

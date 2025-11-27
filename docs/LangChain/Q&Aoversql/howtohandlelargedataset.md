@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Deal with large datasets"
-categories: [Q&Aoversql]
+parent: Q&A Over SQL
+grand_parent: LangChain
+nav_order: 3
 ---
 # How to deal with large databases when doing SQL question answering
 

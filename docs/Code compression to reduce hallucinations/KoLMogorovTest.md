@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "KolMogorov Test"
-categories: [Code compression]
+parent: Code Compression
+nav_order: 4
 ---
 # The KOLMOGOROV TEST
 

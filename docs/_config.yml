@@ -1,18 +1,24 @@
-lsi: false
-safe: true
-source: .
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
+title: "Neural Notes"
+description: "You can find notes related to various machine learning and deep learning topics including knowledge about various tools and frameworks."
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+
+# Just the Docs theme settings
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+aux_links:
+  "GitHub":
+    - "https://github.com/Krishan098/notes"
+
+# Kramdown settings
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
 
-remote_theme: pages-themes/slate@v0.2.0
-plugins:
-- jekyll-remote-theme
-title: "Neural Notes"
-description: "You can find notes related to various machine learning and deep learning topics including knowledge about various tools and frameworks."
+highlighter: rouge
 baseurl: ""
 url: ""

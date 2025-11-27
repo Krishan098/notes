@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Fuzzy Logic"
-categories: [Machine Learning]
+parent: Machine Learning
+nav_order: 2
 ---
 
 # Fuzzy Logic

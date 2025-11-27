@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Multi-agent systems"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 9
 ---
 # Multi-agent systems
 

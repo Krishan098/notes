@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "RAG"
-categories: [RAG]
+title: "RAG Introduction"
+parent: RAG
+grand_parent: LangChain
+nav_order: 1
 ---
 # RAG 
 - Q&A chatbots are applications that can answer questions about specific source information.

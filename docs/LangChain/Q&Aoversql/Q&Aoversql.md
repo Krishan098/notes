@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "Build a Q&A system"
-categories: [Q&Aoversql]
+title: "Q&A Over SQL"
+parent: Q&A Over SQL
+grand_parent: LangChain
+nav_order: 1
 ---
 # Build a Question/Answering system over SQL data
 

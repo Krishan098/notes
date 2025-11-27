@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Vector Stores"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 18
 ---
 # Vector Stores
 - Vector stores are specialized data stores that enable indexing and retrieving information based on vector representations.

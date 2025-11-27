@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "Summary for the three papers"
-categories: [Code compression to reduce hallucinations]
+title: "Code Compression Summary"
+parent: Code Compression
+nav_order: 2
 ---
 # Orchestrating Structure and Efficiency in LLM contexts
 

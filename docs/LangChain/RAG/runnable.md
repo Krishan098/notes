@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Runnable interface"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 11
 ---
 
 # Runnable interface

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Deep Research"
-categories: [Machine Learning]
+parent: Machine Learning
+nav_order: 4
 ---
 
 - It's a new agentic capability that conducts multi-step research on the internet for complex tasks.

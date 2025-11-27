@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "LangGraph Introduction"
-categories: [LangGraph]
+parent: LangGraph
+nav_order: 1
 ---
 
 # LangGraph

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "QLoRA"
-categories: [Machine Learning]
+parent: Machine Learning
+nav_order: 5
 ---
 
 # QLoRA:

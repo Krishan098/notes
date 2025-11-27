@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Chat History"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 4
 ---
 # Chat history
 

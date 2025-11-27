@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Methodology"
-categories: [Code compression to reduce hallucinations]
+parent: Code Compression
+nav_order: 5
 ---
 
 The proposed methodology aims to significantly reduce syntactic and logical hallucinations in code generation by employing a **structure-aware compressed Retrieval-Augmented Generation (RAG) system** [Methodology Statement]. This system will combine **AST-T5 segmentation** with an **AST-fidelity-aware In-Context Former (IC-Former)** [Methodology Statement].

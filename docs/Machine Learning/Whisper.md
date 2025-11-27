@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "WHISPER"
-categories: [Machine Learning]
+parent: Machine Learning
+nav_order: 7
 ---
 # Robust Speech Recognition via Large-Scale Weak Supervision
 ---

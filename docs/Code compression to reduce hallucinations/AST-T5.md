@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "AST-T5"
-categories: [Code compression to reduce hallucinations]
+parent: Code Compression
+nav_order: 1
 ---
 
 

@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Agents"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 2
 ---
 # Agents:
 

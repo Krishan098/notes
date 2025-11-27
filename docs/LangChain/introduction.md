@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Introduction to LangChain"
-categories: [LangChain]
+parent: LangChain
+nav_order: 1
 ---
 # INTRO
 - Framework for developing applications powered by LLMs.

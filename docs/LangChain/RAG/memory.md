@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Memory"
-categories: [RAG]
+parent: RAG
+grand_parent: LangChain
+nav_order: 7
 ---
 # Memory
 - Memory is a cognitive function that allows people to store, retrieve, and use information to understand their present and future. Consider the frustration of working with a colleague who forgets everything you tell them, requiring constant repetition! As AI agents undertake more complex tasks involving numerous user interactions, equipping them with memory becomes equally crucial for efficiency and user satisfaction. With memory, agents can learn from feedback and adapt to users' preferences. This guide covers two types of memory based on recall scope:
