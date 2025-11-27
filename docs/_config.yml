@@ -1,96 +1,25 @@
-title: Neural Notes
-tagline: Notes on Machine Learning, Deep Learning, LangChain, and more
-description: >-
-  A collection of notes on Machine Learning, Deep Learning, LangChain, LangGraph, and related topics.
+title: "Neural Notes"
+description: "You can find notes related to various machine learning and deep learning topics including knowledge about various tools and frameworks."
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
 
-url: "https://krishan098.github.io"
-baseurl: "/notes"
+# Just the Docs theme settings
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+nav_exclude: ['images']
+aux_links:
+  "GitHub":
+    - "https://github.com/Krishan098/notes"
 
-github:
-  username: Krishan098
-
-social:
-  name: Neural Notes
-  links:
-    - https://github.com/Krishan098/notes
-
-theme: jekyll-theme-chirpy
-
-lang: en
-timezone: UTC
-
-# Self-hosted static assets
-assets:
-  self_host:
-    enabled: false
-
-toc: true
-comments: false
-math: true
-
-paginate: 10
-
+# Kramdown settings
 kramdown:
+  math_engine: mathjax
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: highlight
-    block:
-      line_numbers: true
 
-collections:
-  tabs:
-    output: true
-    sort_by: order
-
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      comments: false
-      toc: true
-      permalink: /posts/:title/
-  - scope:
-      path: _tabs
-      type: tabs
-    values:
-      layout: page
-      permalink: /:title/
-
-sass:
-  style: compressed
-
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  profile: false
-  blanklines: false
-  ignore:
-    envs: [development]
-
-exclude:
-  - "*.gem"
-  - "*.gemspec"
-  - docs
-  - CHANGELOG.md
-  - README.md
-  - LICENSE
-  - Gemfile.lock
-
-plugins:
-  - jekyll-paginate
-  - jekyll-redirect-from
-  - jekyll-seo-tag
-  - jekyll-archives
-  - jekyll-sitemap
-
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
+highlighter: rouge
+baseurl: ""
+url: ""
