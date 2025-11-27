@@ -5,10 +5,6 @@ date: 2024-01-31
 description: Notes on Text splitters
 tags: [langchain, rag]
 categories: [LangChain, RAG]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Text Splitters

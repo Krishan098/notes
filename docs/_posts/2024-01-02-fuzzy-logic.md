@@ -5,10 +5,6 @@ date: 2024-01-02
 description: Notes on Fuzzy Logic
 tags: [machine-learning]
 categories: [Machine Learning]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Fuzzy Logic

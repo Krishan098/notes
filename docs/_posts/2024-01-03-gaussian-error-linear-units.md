@@ -5,10 +5,6 @@ date: 2024-01-03
 description: Notes on Gaussian Error Linear Units
 tags: [machine-learning]
 categories: [Machine Learning]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Gaussian Error Linear Units(GELU)

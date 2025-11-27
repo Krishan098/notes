@@ -5,10 +5,6 @@ date: 2024-01-09
 description: Notes on Code Compression Summary
 tags: [code-compression]
 categories: [Code Compression]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Orchestrating Structure and Efficiency in LLM contexts

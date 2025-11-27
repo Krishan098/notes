@@ -5,10 +5,6 @@ date: 2024-01-15
 description: Notes on Better prompts
 tags: [langchain, q&a-over-sql]
 categories: [LangChain, Q&A Over SQL]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # How to better prompt when doing SQL question-answering

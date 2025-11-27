@@ -5,10 +5,6 @@ date: 2024-01-14
 description: Notes on Q&A Over SQL
 tags: [langchain, q&a-over-sql]
 categories: [LangChain, Q&A Over SQL]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Build a Question/Answering system over SQL data

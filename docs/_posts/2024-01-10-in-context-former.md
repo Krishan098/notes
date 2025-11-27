@@ -5,10 +5,6 @@ date: 2024-01-10
 description: Notes on In-Context Former
 tags: [code-compression]
 categories: [Code Compression]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # In-Context Former: Lightning-fast Compressing Context for Large Language Model

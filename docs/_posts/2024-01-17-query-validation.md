@@ -5,10 +5,6 @@ date: 2024-01-17
 description: Notes on Query validation
 tags: [langchain, q&a-over-sql]
 categories: [LangChain, Q&A Over SQL]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # How to do query validation as part of SQL question-answering

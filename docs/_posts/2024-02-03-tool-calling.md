@@ -5,10 +5,6 @@ date: 2024-02-03
 description: Notes on Tool Calling
 tags: [langchain, rag]
 categories: [LangChain, RAG]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Tool Calling/Function calling

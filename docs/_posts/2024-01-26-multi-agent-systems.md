@@ -5,10 +5,6 @@ date: 2024-01-26
 description: Notes on Multi-agent systems
 tags: [langchain, rag]
 categories: [LangChain, RAG]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Multi-agent systems

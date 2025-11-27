@@ -5,10 +5,6 @@ date: 2024-01-27
 description: Notes on Retrieval
 tags: [langchain, rag]
 categories: [LangChain, RAG]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # Retrieval

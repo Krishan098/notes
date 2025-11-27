@@ -5,10 +5,6 @@ date: 2024-01-06
 description: Notes on Slowfast Network
 tags: [machine-learning]
 categories: [Machine Learning]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 # SLOWFAST NETWORK

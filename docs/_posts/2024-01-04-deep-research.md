@@ -5,10 +5,6 @@ date: 2024-01-04
 description: Notes on Deep Research
 tags: [machine-learning]
 categories: [Machine Learning]
-giscus_comments: false
-related_posts: false
-toc:
-  sidebar: left
 ---
 
 - It's a new agentic capability that conducts multi-step research on the internet for complex tasks.
