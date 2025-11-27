@@ -4,7 +4,7 @@ title: "Embedding Models"
 date: 2024-01-22
 description: Notes on Embedding Models
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Embedding models

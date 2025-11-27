@@ -4,7 +4,7 @@ title: "Streaming"
 date: 2024-01-29
 description: Notes on Streaming
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Streaming

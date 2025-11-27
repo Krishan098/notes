@@ -4,7 +4,7 @@ title: "RAG Introduction"
 date: 2024-01-18
 description: Notes on RAG Introduction
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # RAG 

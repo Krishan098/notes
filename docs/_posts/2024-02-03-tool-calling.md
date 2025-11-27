@@ -4,7 +4,7 @@ title: "Tool Calling"
 date: 2024-02-03
 description: Notes on Tool Calling
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Tool Calling/Function calling

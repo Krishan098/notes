@@ -4,7 +4,7 @@ title: "Query validation"
 date: 2024-01-17
 description: Notes on Query validation
 tags: [langchain, q&a-over-sql]
-categories: [LangChain, Q&A Over SQL]
+categories: [LangChain]
 ---
 
 # How to do query validation as part of SQL question-answering

@@ -4,7 +4,7 @@ title: "Deal with large datasets"
 date: 2024-01-16
 description: Notes on Deal with large datasets
 tags: [langchain, q&a-over-sql]
-categories: [LangChain, Q&A Over SQL]
+categories: [LangChain]
 ---
 
 # How to deal with large databases when doing SQL question answering

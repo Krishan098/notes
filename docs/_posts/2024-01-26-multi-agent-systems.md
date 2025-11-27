@@ -4,7 +4,7 @@ title: "Multi-agent systems"
 date: 2024-01-26
 description: Notes on Multi-agent systems
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Multi-agent systems

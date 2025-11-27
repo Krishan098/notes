@@ -4,7 +4,7 @@ title: "Subgraphs"
 date: 2024-01-30
 description: Notes on Subgraphs
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Subgraphs

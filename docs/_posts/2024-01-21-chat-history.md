@@ -4,7 +4,7 @@ title: "Chat History"
 date: 2024-01-21
 description: Notes on Chat History
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Chat history

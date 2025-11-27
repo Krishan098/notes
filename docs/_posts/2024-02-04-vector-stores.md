@@ -4,7 +4,7 @@ title: "Vector Stores"
 date: 2024-02-04
 description: Notes on Vector Stores
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Vector Stores

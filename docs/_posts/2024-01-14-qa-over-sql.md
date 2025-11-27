@@ -4,7 +4,7 @@ title: "Q&A Over SQL"
 date: 2024-01-14
 description: Notes on Q&A Over SQL
 tags: [langchain, q&a-over-sql]
-categories: [LangChain, Q&A Over SQL]
+categories: [LangChain]
 ---
 
 # Build a Question/Answering system over SQL data

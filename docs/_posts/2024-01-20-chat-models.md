@@ -4,7 +4,7 @@ title: "Chat Models"
 date: 2024-01-20
 description: Notes on Chat Models
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Chat Models

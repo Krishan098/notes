@@ -4,7 +4,7 @@ title: "Retrieval"
 date: 2024-01-27
 description: Notes on Retrieval
 tags: [langchain, rag]
-categories: [LangChain, RAG]
+categories: [LangChain]
 ---
 
 # Retrieval
