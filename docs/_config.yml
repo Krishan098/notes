@@ -14,7 +14,5 @@ plugins:
 - jekyll-remote-theme
 title: "Neural Notes"
 description: "You can find notes related to various machine learning and deep learning topics including knowledge about various tools and frameworks."
-collections:
-  notes:
-    output: true
-    permalink: /docs/:path/
+baseurl: ""
+url: ""
