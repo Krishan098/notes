@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://krishan098.github.io/notes/sitemap.xml
