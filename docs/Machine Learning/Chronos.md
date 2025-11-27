@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Chronos"
+categories: [Machine Learning]
+---
+
 # Chronos
 
 ## Abstract 
@@ -30,4 +36,10 @@
 
 - Time series forecasting can be addressed with a variety of different methods which can be broadly categorized into classical forecasting methods and deep learning methods. 
 
-- Classical forecasting methods such as ETS, ARIMA, Theta fit a separate model to each time series independently. In contrast, deep learning forecasting models learn across 
+- Classical forecasting methods such as ETS, ARIMA, Theta fit a separate model to each time series independently. In contrast, deep learning forecasting models learn across time series in a given dataset(global models).
+
+- Apart from the choice of architecture, these approaches differ in the way they model the target, with some modeling the density function while others directly predicting a set of quantiles.
+ 
+- Not all models produce probabilistic forecasts: notably, models such as Informer and DLinear only produce point forecasts.
+
+- The original transformer structure is an encoder-decoder
