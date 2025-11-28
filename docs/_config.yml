@@ -21,5 +21,5 @@ kramdown:
     css_class: highlight
 
 highlighter: rouge
-baseurl: ""
-url: ""
+baseurl: "/notes"
+url: "https://krishan098.github.io"
