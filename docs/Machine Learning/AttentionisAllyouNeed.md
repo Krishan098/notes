@@ -116,6 +116,71 @@ Predicted Next Token
 
 Output of each sublayer is LayerNorm(x+Sublayer(x)). In encoder , each of the 6 layers have 2 sublayers. To facilitate these residual connections, all sublayers in the model, as well as the embedding layers, produce output of dimension $d_{model}=512$.
 
-### Attention
+### 4. Attention
 
-- 
+- An attention function maps a query and a set of key-value pairs to an ooutput, where all of them are vectors. 
+
+- ![alt text](image-12.png)
+
+- The output is computed as a weighted sum of the values, where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key.
+
+#### 4.1. Scaled Dot-Product Attention 
+
+- The input consists of queries and keys of dimension $d_K$ and values of dimension $d_v$. We compute the dot products of the query with all keys, divide each by $\sqrt{d_k}$ and apply a softmax function to obtain the weights on the values.
+
+- We compute attention function on a set of queries simultaneously, packed together into a matrix Q. The keys and values are also packed into matrices K and V.         $$Attention(Q,K,V)=softmax\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$. 
+
+The two most commonly used attention functions are additive attention and dot-product(multiplicative) attention. Dot product attention is same as this apart from the scaling factor of $\left(\frac{1}{\sqrt{d_k}}\right)$. 
+
+Additive attention computes the compatibility function using a feed-forward network with a single hidden layer. Dot product attention is much faster and space efficient, since it can be implemented using highly optimized matrix multiplication.
+
+For small values of $d_k$, both of them perform similar, but for larger values of $d_k$, the dot product grows large in magnitude, pushing the softmax function into regions where it has extremely small gradients. Therefore we scale the dot products by $\left(\frac{1}{\sqrt{d_k}}\right)$.
+
+#### 4.2 Multi-Head Attention
+
+A linear projection is just a matrix multiplication.
+
+The projection matrices are not fixed mathematical transforms like PCA or SVD.
+
+They are simply trainable weight matrices. During training, backpropagation learns the values of WQ, WK, WV​, and WO so that each head extracts useful information from the input.
+
+ $$
+\text{MultiHead}(Q,K,V) = \text{Concat}(head_1, \ldots, head_h) W^{O}
+$$
+
+$$
+head_i = \text{Attention}(Q W_i^{Q},\, K W_i^{K},\, V W_i^{V})
+$$
+- where tthe projections are parameter matrices:
+
+$$
+W_i^{Q} \in \mathbb{R}^{d_{\text{model}} \times d_k},\,
+W_i^{K} \in \mathbb{R}^{d_{\text{model}} \times d_k},\,
+W_i^{V} \in \mathbb{R}^{d_{\text{model}} \times d_v},\,
+W^{O} \in \mathbb{R}^{h d_v \times d_{\text{model}}}
+$$
+
+#### Applications of Attention
+
+It is used in 3 different ways in transformer:
+
+   - In encoder-decoder attention layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input sequence. 
+
+   - The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come from the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder can attend to all positions in the previous layer of the encoder.
+
+   - Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the decoder up to and including that position. We prevent leftward information flow in the decoder to preserve the auto-regressive property by masking out(setting to $-\infty$) all values in the input of the softmax which correspond to illegal connections.
+
+### 5. Position-wise Feed-Forward Networks
+
+- In  addition to attention sub layers, each of the layers in the encoder and decoder consists a fully connected feed-forward network, which is applied to each position separately and identically. This has 2 linear transformations with a ReLU in between .
+      $$FFN(x)=max(0,xW_1+b_1)W_2+b_2$$
+
+- While the linear transformations are the same across different positions, they use different parameters from layer to layer. 
+
+### 6. Embeddings and Softmax
+
+![alt text](image-13.png)
+
+### 7. Positional Encoding
+
+- Since the model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence. We add positional encodings to the input embeddings at the bottoms of the encoder and decoder stacks.The positional encodings have the same dimension as the embeddings , so that the two can be summed.
