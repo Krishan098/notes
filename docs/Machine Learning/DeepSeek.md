@@ -218,10 +218,7 @@ In this paper, we use the notation DeepSeek-V3-Base as the base model, DeepSeek-
 
 Post-training has emerged as an essential step in refining pre-trained LLMs to meet specific performance goals and align with human expectations. A widely adopted two-stage post-training framework is SFT followed by RL.
 
-Supervised Fine-Tuning refines a pre-trained LLM by training it on a curated dataset of input-output pairs tailored to specific tasks. The process employs a supervised learning objective, typically minimizing cross-entropy loss between the model’s predictions and labeled ground truth. For instance, in conversational applications, SFT might utilize dialogue datasets where desired responses are explicitly provided, enabling the model to adapt its outputs to predefined standards. SFT offers several compelling benefits. First, it achieves precise task alignment by leveraging high-quality examples, allowing the model to excel in domains such as customer support or technical documentation (Radford et al., 2019).
-Second, its reliance on pre-trained weights ensures computational efficiency, requiring fewer
-resources than training from scratch. Finally, the use of explicit input-output mappings enhances
-interpretability, as the model’s learning process is directly tied to observable data, minimizing the risk of erratic behavior. Despite its strengths, the performance of SFT hinges on the quality and diversity of the training dataset; narrow or biased data can impair the model’s ability to generalize to novel contexts . Additionally, SFT’s static nature—optimizing for fixed outputs—may fail to capture evolving human preferences or nuanced objectives. The labor-intensive process of curating high-quality datasets further complicates its scalability, as errors or inconsistencies in the data can propagate into the model’s behavior.
+Supervised Fine-Tuning refines a pre-trained LLM by training it on a curated dataset of input-output pairs tailored to specific tasks. The process employs a supervised learning objective, typically minimizing cross-entropy loss between the model’s predictions and labeled ground truth. For instance, in conversational applications, SFT might utilize dialogue datasets where desired responses are explicitly provided, enabling the model to adapt its outputs to predefined standards. SFT offers several compelling benefits. First, it achieves precise task alignment by leveraging high-quality examples, allowing the model to excel in domains such as customer support or technical documentation. Second, its reliance on pre-trained weights ensures computational efficiency, requiring fewer resources than training from scratch. Finally, the use of explicit input-output mappings enhances interpretability, as the model’s learning process is directly tied to observable data, minimizing the risk of erratic behavior. Despite its strengths, the performance of SFT hinges on the quality and diversity of the training dataset; narrow or biased data can impair the model’s ability to generalize to novel contexts. Additionally, SFT’s static nature—optimizing for fixed outputs—may fail to capture evolving human preferences or nuanced objectives. The labor-intensive process of curating high-quality datasets further complicates its scalability, as errors or inconsistencies in the data can propagate into the model’s behavior.
 
 Following SFT, Reinforcement Learning further refines the LLM by optimizing its outputs against a reward signal. In this stage, the model interacts with an environment—often a reward model trained on human feedback—and adjusts its behavior to maximize cumulative rewards. A prominent instantiation of this approach is Reinforcement Learning from Human Feedback
 (RLHF), where the reward function encodes human preferences. RL thus shifts the focus from static supervision to dynamic optimization. Notably, RL reduces the need for extensive annotated resources; while SFT demands a fully labeled dataset for every
@@ -234,3 +231,78 @@ adaptable.
 In this study, we demonstrate that the SFT stage may impede a model’s ability to explore and develop effective reasoning strategies. This limitation arises because human-provided responses, which serve as targets during SFT, are not always optimal for model learning; they often omit critical reasoning components such as explicit reflection and verification steps. To address this, DeepSeek-R1-Zero enables direct exploration of reasoning patterns by the model itself, independent of human priors. The reasoning trajectories discovered through this self-
 exploration are subsequently distilled and used to train other models, thereby promoting the acquisition of more robust and generalizable reasoning capabilities.
 
+##### A.3 A Comparison of GRPO and PPO
+
+Group Relative Policy Optimization(GRPO) is the reinforcement learning algorithm that we adopt to train DeepSeek-R1-Zero and DeepSeek-R1. It was originally proposed to simplify the training process and reduce the resource consumption of Proximal Policy Optimization(PPO), which is widely used in the RL stage of LLMs.
+![alt text](image-49.png)
+For each question q, GRPO samples a group of outputs {$o_1,o_2,\dots,o_G$} from the old policy $\pi_{\theta_{old}}$ and then optimizes the policy model $\pi_{\theta}$ by maximizing the following objective:
+
+$$\mathcal{J}_{\mathrm{GRPO}}(\theta)
+=
+\mathbb{E}_{\left[
+q \sim P(Q),\,
+\{o_i\}_{i=1}^{G} \sim \pi_{\theta_{\mathrm{old}}}(O|q)
+\right]}$$
+
+$$
+\left[
+\frac{1}{G}
+\sum_{i=1}^{G}
+\left(
+\min
+\left(
+\frac{\pi_{\theta}(o_i|q)}
+{\pi_{\theta_{\mathrm{old}}}(o_i|q)}
+A_i,
+\operatorname{clip}
+\left(
+\frac{\pi_{\theta}(o_i|q)}
+{\pi_{\theta_{\mathrm{old}}}(o_i|q)},
+1-\epsilon,
+1+\epsilon
+\right)
+A_i
+\right)
+-
+\beta D_{\mathrm{KL}}(\pi_{\theta}\|\pi_{\mathrm{ref}})
+\right)
+\right]
+\tag{11}$$
+
+$$
+D_{\mathrm{KL}}(\pi_{\theta}\|\pi_{\mathrm{ref}})
+=
+\frac{\pi_{\mathrm{ref}}(o_i|q)}
+{\pi_{\theta}(o_i|q)}
+-
+\log
+\frac{\pi_{\mathrm{ref}}(o_i|q)}
+{\pi_{\theta}(o_i|q)}
+-1
+\tag{12}
+$$
+
+where $\pi_{\mathrm{ref}}$ is a reference policy, $\epsilon and \beta$ are hyper-parameters, and $A_i$ is the advantage, computed using a group of rewards ${r_1,r_2,\dots,\r_G}$ corrsponding to the outputs within each group:
+
+$$A_i
+=
+\frac{
+r_i-\operatorname{mean}(\{r_1,r_2,\ldots,r_G\})
+}{
+\operatorname{std}(\{r_1,r_2,\ldots,r_G\})
+}
+\tag{13}$$
+
+In contrast, in PPO the advantage is typically computed by applying the Generalized Advantage Estimation, based not only on the rewards but also on a learned value model. Since the value model is usually of similar size as the policy model, it introduces a significant memory and computational overhead. Additionally, the training objective of the value model is to predict the expected cumulative reward from the current position onward, based on the tokens generated from the beginning up to the current position. This is inherently difficult, especially when only the final outcome reward is available. The challenge becomes even more pronounced when training long chain-of-thought reasoning models. As the output length increases, the model is more likely to engage in behaviors such as reflection and revision during generation ,meaning that the content initially generated may later be revised or contradicted, which makes it even less feasible to predict the final reward based on a partial response.
+
+Another key difference between GRPO and PPO is how Kullback-Leibler(KL) divergence between the trained policy and the reference policy is incorporated into the training process. In GRPO, an unbiased estimator of the KL divergence is directly added in the loss, while in PPO the per-token KL penalty is added as a dense reward at each token. Since the optimization goal of reinforcement learning is to maximize cumulative rewards, PPO's approach penalizes the cumulative KL divergence, which may implicitly penalize the length of the response and thereby prevent the model's response length from increasing. In addition, as we may train thousands of steps in the scenario of training long chain-of-thought reasoning models, the trained policy can diverge significantly
+from the initial reference policy. In order to balance the scope that the training policy can explore and the stability of the training, we periodically update the reference policy to the latest policy during the actual training process.
+![alt text](image-50.png)
+
+Unlike GRPO, PPO requires additional hyperparameter tuning—particularly of the 𝜆 coefficient in GAE—and is highly sensitive to this parameter. When 𝜆 is set to 0.95 (the default value in most open-source PPO implementations), PPO performs considerably worse than GRPO. However, with careful tuning (setting 𝜆 to 1.0),
+PPO’s performance improves substantially, nearing that of GRPO. 
+
+While PPO can achieve comparable performance when appropriately tuned, it demands additional computational cost for hyperparameter optimization. Moreover, considering the memory and computational overhead associated with training an additional value model, GRPO presents a more practical alternative, especially when training large-scale models with
+constrained resources.
+
+![alt text](image-51.png)
